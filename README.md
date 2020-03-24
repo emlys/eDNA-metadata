@@ -38,7 +38,7 @@ Note that if you zoom in, pixelation becomes visible, and the data does not alwa
 This is inherent to the raster format. The resolution of this dataset is 250 meters.
 
 ### Raster dataset series (Earth Engine `ImageCollection` datasets)
-Some datasets in Earth Engine consist of a collection of many images. Usually these are overlapping images from different points in time, such as from satellite data. To use an `ImageCollection` datase, use the `RasterDatasetSeries` class in `metadata.ipynb`. This is very similar to `RasterDataset`, but we need to specify a range of dates to look at. 
+Some datasets in Earth Engine consist of a collection of many images. Usually these are overlapping images from different points in time, such as from satellite data.
 
 The individual `Image`s in a collection often do not fully cover the area of interest. So, you may need to experiment with different date ranges in order to get adequate coverage. For example, suppose we are interested in the [Landsat 8 NDVI dataset](https://developers.google.com/earth-engine/datasets/catalog/LANDSAT_LC08_C01_T1_8DAY_NDVI). Here is the dataset coverage over the continental US over one day, one month, and one year:
 
@@ -49,14 +49,14 @@ The individual `Image`s in a collection often do not fully cover the area of int
 Let's say the one-month coverage is sufficient. Instantiate a `RasterDatasetSeries` using that date range:
 
 ```
-RasterDatasetSeries(
+RasterDataset(
     path='LANDSAT/LC08/C01/T1_8DAY_NDVI',
     band='NDVI',
     date_range=('2019-01-01', '2019-02-01')
 )
 ```
 
-If the collection has more than one image in your chosen date range, they will be merged into one image using the `ee.ImageCollection.mosaic()` algorithm, and will be treated as one dataset. If you want to compare data from the same collection at different points in time, instantiate a `RasterDatasetSeries` for each date range. If you don't care so much about the time the imagery was taken, you can use a broad date range such as one year, which should provide good coverage.
+If the collection has more than one image in your chosen date range, they will be merged into one image using the `ee.ImageCollection.mosaic()` algorithm, and will be treated as one dataset. If you want to compare data from the same collection at different points in time, instantiate a `RasterDataset` for each date range. If you don't care so much about the time the imagery was taken, you can use a broad date range such as one year, which should provide good coverage.
 
 
 ### Vector datasets (Earth Engine `FeatureCollection` datasets)
