@@ -14,7 +14,7 @@ Decide which datasets you want to use. You can browse them in the [Google Earth 
 ### Getting started
 You should run the notebook in a conda environment as is recommended for both [Jupyter Notebook](https://jupyter.readthedocs.io/en/latest/install.html#installing-jupyter-using-anaconda-and-conda) and [Google Earth Engine](https://developers.google.com/earth-engine/python_install#environments).
 
-Install miniconda if you don't have it already, following the instructions [here](https://developers.google.com/earth-engine/python_install-conda#install_conda).
+Install conda if you don't have it already, following the instructions [here](https://developers.google.com/earth-engine/python_install-conda#install_conda).
 
 Make sure you are in the `eDNA-metadata/` directory. Create a new conda environment from the included environment.yml file, which will install all the necessary packages:
 
